@@ -1,0 +1,45 @@
+﻿@model IEnumerable<SrodkiTrwale.Models.ApiModels.FixedAssetApiModel>
+
+@{
+    ViewBag.Title = "GenerateReportForAssets";
+}
+
+<h2>GenerateReportForAssets</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.categoryName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.userName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.dateOfCollections)
+        </th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.categoryName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.userName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.dateOfCollections)
+        </td>
+    </tr>
+}
+
+</table>

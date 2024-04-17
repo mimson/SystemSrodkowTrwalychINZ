@@ -1,0 +1,77 @@
+﻿@model SrodkiTrwale.Models.ViewModel.FixedAssetDetailsModelView
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+<br />
+<div>
+    @using (Html.BeginForm("Amortize", "FixedAssets"))
+    {
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayName("Picture")
+            </dt>
+            <dd>
+                <img src="@Url.Content(@ViewBag.ImageUrl)" alt="Image" style="height: 100px; width: 75px" />
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.Categories)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Categories)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.UserName)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.UserName)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Name)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Name)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.DateOfCollections)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.DateOfCollections)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.ListOfAmortization)
+            </dt>
+
+            <dd>
+                @Html.HiddenFor(model => model.ID)
+                @Html.DropDownListFor(model => model.AmortizationValue, Model.ListOfAmortization, "Wybierz wartość amortyzacji")
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.CurrentPrice)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.CurrentPrice)
+            </dd>
+
+        </dl>
+        <input type="submit" value="Amortize!" />
+    }
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+    @*@Html.ActionLink("Amortize!", "Amortize", new { value = Model.AmortizationValue, fixedAssetsId = Model.ID })
+    @Html.ActionLink("Amortize!", "Amortize", new { amortizationValue = Model.AmortizationValue, fixedAssetsId = Model.ID })*@
+</p>

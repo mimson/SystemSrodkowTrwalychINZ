@@ -1,0 +1,66 @@
+﻿@model SystemSrodkowTrwalych.Models.FixedAssets
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>FixedAssets</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Amortization.Description)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Amortization.Description)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Categories.CatTypes)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Categories.CatTypes)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Users.FirstName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Users.FirstName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AmortizationID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AmortizationID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DateOfCollections)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DateOfCollections)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

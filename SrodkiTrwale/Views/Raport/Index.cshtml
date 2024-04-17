@@ -1,0 +1,31 @@
+@model SrodkiTrwale.Models.ViewModel.RaportIndex
+
+<h2>Raporty</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            Imiê i nazwisko
+        </th>
+        <th>
+            Iloœæ œrodków trwa³ych przypisanych temu u¿ytkownikowi
+        </th>
+    </tr>
+
+    @foreach (var item in Model.Users)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.fixedAssetsCount)
+            </td>
+        </tr>
+    }
+
+</table>
+<hr />
+<h3>
+    Œrodki trwa³e przyjête w ostatnich 30 dniach: @Model.last30DaysFixedAssets
+</h3>

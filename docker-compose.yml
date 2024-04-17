@@ -1,0 +1,9 @@
+version: '3.4'
+
+services:
+  srodkitrwale:
+    image: ${DOCKER_REGISTRY-}srodkitrwale
+    build:
+      context: .\SrodkiTrwale
+      dockerfile: Dockerfile
+
